@@ -1,0 +1,11 @@
+presenter/Presenter.class
+Main.class
+view/ListagemContatosView$1.class
+model/Contato.class
+view/ManterContatoView.class
+view/MenuPrincipalView.class
+view/ListagemContatosView.class
+presenter/ManterContatoPresenter.class
+presenter/MenuPrincipalPresenter.class
+presenter/ListagemContatosPresenter.class
+presenter/Operacao.class
