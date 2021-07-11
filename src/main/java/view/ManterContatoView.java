@@ -40,7 +40,11 @@ public class ManterContatoView extends javax.swing.JFrame {
 
         jLabel2.setText("Telefone:");
 
-        campoTelefone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("(##) #####-####"))));
+        try {
+            campoTelefone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) #####-####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
 
         botaoFechar.setText("Fechar");
 

@@ -2,9 +2,6 @@
 package presenter;
 
 import java.awt.event.ActionEvent;
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import view.MenuPrincipalView;
 
 public final class MenuPrincipalPresenter extends Presenter {
@@ -21,32 +18,34 @@ public final class MenuPrincipalPresenter extends Presenter {
     protected void initView() {
         view = MenuPrincipalView.getInstancia();
         
-        view.getMenuItemNovoContato().addActionListener(((ActionEvent e) -> {
+        view.getMenuItemNovoContato().addActionListener((ActionEvent e) -> {
             botaoNovoContatoPressionado();
-        }));
+        });
         
-        view.getMenuItemListarContatos().addActionListener(((ActionEvent e) -> {
+        view.getMenuItemListarContatos().addActionListener((ActionEvent e) -> {
             botaoListarContatosPressionado();
-        }));
+        });
         
-        view.getMenuItemFecharSistema().addActionListener(((ActionEvent e) -> {
+        view.getMenuItemFecharSistema().addActionListener((ActionEvent e) -> {
             botaoFecharSistema();
-        }));
+        });
+    }
+    
+    @Override
+    public void setViewVisible(boolean b) {
+        view.setVisible(b);
     }
     
     // -------------------------------------------------------------------------
     // Botões
     // -------------------------------------------------------------------------
     private void botaoNovoContatoPressionado() {
-        new ManterContatoPresenter(Operacao.CREATE, null);
+        ManterContatoPresenter.getInstancia().setOperacao(Operacao.CREATE, null);
+        ManterContatoPresenter.getInstancia().setViewVisible(true);
     }
     
     private void botaoListarContatosPressionado() {
-        try {
-            new ListagemContatosPresenter();
-        } catch (IOException ex) {
-            Logger.getLogger(MenuPrincipalPresenter.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        ListagemContatosPresenter.getInstancia().setViewVisible(true);
     }
     
     private void botaoFecharSistema() {

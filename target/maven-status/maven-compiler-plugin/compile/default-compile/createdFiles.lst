@@ -1,11 +1,14 @@
 presenter/Presenter.class
-Main.class
+presenter/ManterContatoPresenter$1.class
 view/ListagemContatosView$1.class
+persistence/ContatoPersistence.class
 model/Contato.class
+view/ListagemContatosView.class
+presenter/ListagemContatosPresenter.class
+Main.class
 view/ManterContatoView.class
 view/MenuPrincipalView.class
-view/ListagemContatosView.class
 presenter/ManterContatoPresenter.class
 presenter/MenuPrincipalPresenter.class
-presenter/ListagemContatosPresenter.class
+presenter/ListagemContatosPresenter$1.class
 presenter/Operacao.class
